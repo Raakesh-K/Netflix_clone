@@ -1,0 +1,78 @@
+import React, { useEffect, useState } from "react";
+import "../styles/listitem.scss";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import AddIcon from "@mui/icons-material/Add";
+import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+import ThumbDownOutlinedIcon from "@mui/icons-material/ThumbDownOutlined";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+export const Listitem = ({ index, item }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const [movie, setMovie] = useState({});
+
+  useEffect(() => {
+    const getMovie = async () => {
+      try {
+        const res = await axios.get(`/api/movies/find/${item}`, {
+          headers: {
+            token:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGU5YTI3NWFiOGFmMjY3MjE0ZWQxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc2Njc1ODk1MSwiZXhwIjoxNzY4MDU0OTUxfQ.3BNCSJGXA1S1R6n7Cs0_0HwoBQIpuGuB5hrXi-DfPnM",
+          },
+        });
+        setMovie(res.data || {});
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getMovie();
+  }, [item]);
+
+  return (
+    <Link
+      to="/watch"
+      state={{ video: movie.video }} // ✅ FIX
+    >
+      <div
+        className="list-items"
+        style={{ left: isHovered && index * 225 - 50 + index * 2.5 }}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <img
+          src={`http://localhost:8800/images/${movie.img}`}
+          alt={movie.title}
+        />
+
+        {isHovered && (
+          <>
+            <video
+              src={`http://localhost:8800/videos/${movie.video}`}
+              autoPlay
+              loop
+              muted
+            />
+
+            <div className="iteminfo">
+              <div className="icons">
+                <PlayArrowIcon className="icon" />
+                <AddIcon className="icon" />
+                <ThumbUpOutlinedIcon className="icon" />
+                <ThumbDownOutlinedIcon className="icon" />
+              </div>
+
+              <div className="iteminfotop">
+                <span>{movie.duration}</span>
+                <span className="limit">+{movie.limit}</span>
+                <span>{movie.year}</span>
+              </div>
+
+              <div className="desc">{movie.desc}</div>
+              <div className="genre">{movie.genre}</div>
+            </div>
+          </>
+        )}
+      </div>
+    </Link>
+  );
+};

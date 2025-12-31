@@ -1,0 +1,157 @@
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  color: white;
+
+  background: linear-gradient(
+    to top,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 50%
+  );
+  transition: background-color 0.3s ease;
+
+  &.scrolled {
+    background-color: var(--main-color);
+  }
+
+  .container {
+    height: 70px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* LEFT & RIGHT */
+    .left,
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        height: 40px;
+        border-radius: 5px;
+        object-fit: cover;
+        cursor: pointer;
+        margin-right: 30px;
+      }
+
+      span {
+        cursor: pointer;
+        font-weight: 500;
+        margin-right: 20px;
+        white-space: nowrap;
+      }
+    }
+
+    .right {
+      .icon {
+        font-size: 26px;
+        cursor: pointer;
+      }
+
+      img {
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    /* PROFILE DROPDOWN */
+    .profile {
+      position: relative;
+      cursor: pointer;
+
+      .options {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--main-color);
+        border-radius: 5px;
+        padding: 5px 0;
+        min-width: 130px;
+        z-index: 1000;
+      }
+
+      span {
+        padding: 10px 15px;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+
+      &:hover .options {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+/* =================== TABLET =================== */
+
+@media (max-width: 1024px) {
+  .navbar {
+    .container {
+      padding: 0 30px;
+
+      .left span {
+        font-size: 14px;
+        margin-right: 12px;
+      }
+
+      .right .icon {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+/* =================== MOBILE =================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    .container {
+      padding: 0 15px;
+      height: 60px;
+
+      .left {
+        img {
+          margin-right: 10px;
+          height: 32px;
+        }
+
+        /* 🔥 hide menu text on mobile */
+        span {
+          display: none;
+        }
+      }
+
+      .right {
+        gap: 12px;
+
+        .icon {
+          font-size: 22px;
+        }
+
+        img {
+          height: 32px;
+          width: 32px;
+        }
+      }
+
+      .profile {
+        .options {
+          right: -5px;
+        }
+      }
+    }
+  }
+}
