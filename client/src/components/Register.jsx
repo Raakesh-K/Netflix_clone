@@ -24,7 +24,7 @@ export const Register = () => {
   e.preventDefault();
 
   try {
-    await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, {
+    await axios.post(`${import.meta.env.REACT_APP_API_URL}/api/auth/register`, {
       username: usernameRef.current.value,
       email,
       password: passRef.current.value,
