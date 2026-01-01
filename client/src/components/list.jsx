@@ -2,13 +2,13 @@ import React, { useRef, useState } from "react";
 import "../styles/list.scss";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Listitem } from "./Listitem";
+import { Listitem } from "./listitem";
 
 export const List = ({ list }) => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
   const listRef = useRef();
-
+cd
   const handleClick = (direction) => {
     setIsMoved(true);
     let distance = listRef.current.getBoundingClientRect().x - 50; // 50px margin
