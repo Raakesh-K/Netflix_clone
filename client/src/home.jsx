@@ -13,7 +13,7 @@ export const Home = ({ type }) => {
     const getRandomLists = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.REACT_APP_API_URL}/api/lists${type ? "?type=" + type : ""}${
+          `${import.meta.env.VITE_API_URL}/api/lists${type ? "?type=" + type : ""}${
             genre ? "&genre=" + genre : ""
           }`,
           {

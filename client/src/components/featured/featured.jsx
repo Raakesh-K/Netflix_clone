@@ -11,7 +11,7 @@ export const Featured = ({ type }) => {
   useEffect(() => {
     const getRandomContent = async () => {
       try {
-        const res = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/movies/random?type=${type}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/movies/random?type=${type}`, {
           headers: {
             token:
               "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2E2Y2QyZTRmMWFiZTg4NmQ2MmQ4NyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc2NTQzNjYyNywiZXhwIjoxNzY2NzMyNjI3fQ.sXeC0Q3nUiaBSuGWVknn6O3DO3E_Zu8bwMXnBGUSljw",
