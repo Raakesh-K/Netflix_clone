@@ -8,7 +8,7 @@ export const List = ({ list }) => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
   const listRef = useRef();
-cd
+
   const handleClick = (direction) => {
     setIsMoved(true);
     let distance = listRef.current.getBoundingClientRect().x - 50; // 50px margin
