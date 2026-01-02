@@ -53,7 +53,7 @@ export const Featured = ({ type }) => {
       )}
 
       <img
-        src={`${import.meta.env.REACT_APP_API_URL}/${content.imgTitle}`}
+        src={`${import.meta.env.VITE_API_URL}/${content.imgTitle}`}
         width="100%"
         alt="featured"
       />
