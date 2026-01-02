@@ -40,14 +40,14 @@ export const Listitem = ({ index, item }) => {
         onMouseLeave={() => setIsHovered(false)}
       >
         <img
-          src={`${import.meta.env.VITE_API_URL}/${movie.img}`}
+          src={`${import.meta.env.VITE_API_URL}/images/${movie.img}`}
           alt={movie.title}
         />
 
         {isHovered && (
           <>
             <video
-              src={`${import.meta.env.VITE_API_URL}/${movie.video}`}
+              src={`${import.meta.env.VITE_API_URL}/videos/${movie.video}`}
               autoPlay
               loop
               muted
