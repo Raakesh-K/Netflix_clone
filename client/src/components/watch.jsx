@@ -20,7 +20,7 @@ export const Watch = () => {
         className="video"
         autoPlay
         controls
-        src={`${import.meta.env.REACT_APP_API_URL}/${video}`} // ✅ FIXED
+        src={`${import.meta.env.VITE_API_URL}/videos/${video}`} // ✅ FIXED
       />
     </div>
   );
