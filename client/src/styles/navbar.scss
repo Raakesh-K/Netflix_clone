@@ -1,3 +1,4 @@
+@import '../styles/app.scss';
 .navbar {
   width: 100%;
   position: fixed;
@@ -43,6 +44,10 @@
         font-weight: 500;
         margin-right: 20px;
         white-space: nowrap;
+      }
+
+      @include tablet{
+        display: none;
       }
     }
 
@@ -95,63 +100,3 @@
   }
 }
 
-/* =================== TABLET =================== */
-
-@media (max-width: 1024px) {
-  .navbar {
-    .container {
-      padding: 0 30px;
-
-      .left span {
-        font-size: 14px;
-        margin-right: 12px;
-      }
-
-      .right .icon {
-        font-size: 22px;
-      }
-    }
-  }
-}
-
-/* =================== MOBILE =================== */
-
-@media (max-width: 568px) {
-  .navbar {
-    .container {
-      padding: 0 15px;
-      height: 60px;
-
-      .left {
-        img {
-          margin-right: 10px;
-          height: 32px;
-        }
-
-        /* 🔥 hide menu text on mobile */
-        span {
-          display: block;
-        }
-      }
-
-      .right {
-        gap: 12px;
-
-        .icon {
-          font-size: 22px;
-        }
-
-        img {
-          height: 32px;
-          width: 32px;
-        }
-      }
-
-      .profile {
-        .options {
-          right: -5px;
-        }
-      }
-    }
-  }
-}
