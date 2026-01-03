@@ -8,6 +8,7 @@ export const List = ({ list }) => {
   const [slideNumber, setSlideNumber] = useState(0);
   const [isMoved, setIsMoved] = useState(false);
   const listRef = useRef();
+  const [clicklimit, setClickLimit] = useState(window.innerWidth / 230);
 
   const handleClick = (direction) => {
     setIsMoved(true);
@@ -16,7 +17,7 @@ export const List = ({ list }) => {
       setSlideNumber(slideNumber - 1);
       listRef.current.style.transform = `translateX(${230 + distance}px)`;
     }
-    if (direction === "right" && slideNumber < list.content.length - 5) {
+    if (direction === "right" && slideNumber < list.content.length - clicklimit) {
       setSlideNumber(slideNumber + 1);
       listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
