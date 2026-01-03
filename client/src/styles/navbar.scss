@@ -47,11 +47,11 @@
       }
 
       @include tablet{
-        display: none;
+        display: block;
       }
       &.navbarlink{
          @include tablet{
-        display: none;
+        display: block;
       }
         
       }
