@@ -84,3 +84,42 @@
     }
 
 }
+@media screen and (max-width: 768px) {
+
+  /* COMMON */
+  .login,
+  .register {
+    background-position: center;
+  }
+
+  /* LOGIN */
+  .login {
+    .top {
+      .wrapper {
+        padding: 15px 20px;
+
+        .logo {
+          height: 32px;
+        }
+      }
+    }
+
+    .container {
+      padding: 20px;
+
+      form {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        padding: 20px;
+        gap: 15px;
+
+        input,
+        button {
+          height: 42px;
+        }
+      }
+    }
+  }
+
+}

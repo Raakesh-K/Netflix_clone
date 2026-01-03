@@ -105,13 +105,13 @@
 /* ================= MOBILE (NO HOVER) ================= */
 @media (max-width: 768px) {
   .list-items {
-    width: 140px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin-right: 6px;
     position: relative;
 
     video {
-      display: none; /* 🔥 disable preview video */
+      display: block; /* 🔥 disable preview video */
     }
 
     &:hover {
@@ -123,7 +123,7 @@
     }
 
     .iteminfo {
-      display: none; /* 🔥 no hover content on mobile */
+      display: block; /* 🔥 no hover content on mobile */
     }
   }
 }
