@@ -52,3 +52,22 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .list {
+    margin-left: 10px;
+
+    .wrapper {
+      overflow-x: scroll;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .slider-arrow {
+      display: none; // hide arrows on mobile
+    }
+  }
+}
+        
