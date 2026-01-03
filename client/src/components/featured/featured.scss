@@ -81,8 +81,10 @@
 
 @media (max-width: 768px) {
   .featured {
-    height: 60vh;
-    width: auto;
+    width: 100%;
+min-height: 100vh;
+overflow-x: hidden;
+
   }
 
   .featured .category {
