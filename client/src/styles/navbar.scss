@@ -116,7 +116,7 @@
 
 /* =================== MOBILE =================== */
 
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   .navbar {
     .container {
       padding: 0 15px;
@@ -130,7 +130,7 @@
 
         /* 🔥 hide menu text on mobile */
         span {
-          display: none;
+          display: block;
         }
       }
 
