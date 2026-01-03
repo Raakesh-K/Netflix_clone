@@ -49,6 +49,12 @@
       @include tablet{
         display: none;
       }
+      &.navbarlink{
+         @include tablet{
+        display: none;
+      }
+        
+      }
     }
 
     .right {

@@ -31,8 +31,8 @@ export const Navbar = () => {
             alt="Netflix Logo" 
           />
        <Link to='/' className='link'><span>Home</span></Link>
-         <Link to='/series' className='link'><span>Series</span></Link>
-         <Link to='/movies' className='link'><span>Movies</span></Link>
+         <Link to='/series' className='link'><span className='navbarlink'>Series</span></Link>
+         <Link to='/movies' className='link'><span className='navbarlink'>Movies</span></Link>
           <span>New and Popular</span>
          <span>My List</span>
         </div>
