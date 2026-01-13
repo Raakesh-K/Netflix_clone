@@ -17,7 +17,7 @@ export const Listitem = ({ index, item }) => {
         const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/movies/find/${item}`, {
           headers: {
             token:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NGU5YTI3NWFiOGFmMjY3MjE0ZWQxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc2Njc1ODk1MSwiZXhwIjoxNzY4MDU0OTUxfQ.3BNCSJGXA1S1R6n7Cs0_0HwoBQIpuGuB5hrXi-DfPnM",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5NjY0ZGEyOWRhYzgzZDkxMWE1M2ZjZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTc2ODMxMjIyNiwiZXhwIjoxNzY5NjA4MjI2fQ.UeLJ4uR-YfABwcXk-kaAL_O7OJXDWUeFviuznULGQrg",
           },
         });
         setMovie(res.data || {});
