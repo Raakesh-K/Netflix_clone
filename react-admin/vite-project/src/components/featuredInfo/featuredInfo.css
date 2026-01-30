@@ -51,3 +51,26 @@
   font-size: 15px;
   color: gray;
 }
+@media (max-width: 768px) {
+  .featured {
+    height: 60vh;
+
+    .info {
+      width: 90%;
+      left: 10px;
+      bottom: 20px;
+
+      .desc {
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .buttons {
+        button {
+          padding: 8px 14px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
